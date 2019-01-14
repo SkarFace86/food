@@ -49,6 +49,21 @@ $f3->route('GET /dinner', function() {
     $view = new View();
     echo $view->render('views/dinner.html');
 });
+//Define a burrito route
+$f3->route('GET /dinner/burrito', function() {
+    $view = new View();
+    echo $view->render('views/burrito.html');
+});
+//Define a pizza route
+$f3->route('GET /dinner/pizza', function() {
+    $view = new View();
+    echo $view->render('views/pizza.html');
+});
+//Define a chicken route
+$f3->route('GET /dinner/chicken', function() {
+    $view = new View();
+    echo $view->render('views/chicken.html');
+});
 
 //Run fat-free
 $f3->run();
