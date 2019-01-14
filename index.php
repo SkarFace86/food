@@ -32,10 +32,22 @@ $f3->route('GET /breakfast', function() {
     echo $view->render('views/breakfast.html');
 });
 
-//Define a breakfast route
+//Define a lunch route
 $f3->route('GET /lunch', function() {
     $view = new View();
     echo $view->render('views/lunch.html');
+});
+
+//Define a pancake route
+$f3->route('GET /breakfast/pancakes', function() {
+    $view = new View();
+    echo $view->render('views/pancakes.html');
+});
+
+//Define a dinner route
+$f3->route('GET /dinner', function() {
+    $view = new View();
+    echo $view->render('views/dinner.html');
 });
 
 //Run fat-free
