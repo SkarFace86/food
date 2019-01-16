@@ -117,5 +117,16 @@ $f3->route('POST /order-process', function($f3) {
         $f3->reroute('pizza');
     }
 });
+
+//Define a route to pie
+$f3->route('GET /dessert/@param', function($f3, $params) {
+    $param = $params['param'];
+    if($param == 'pie') {
+        echo "<h3>I like 3.14159 for dessert</h3>";
+    } else {
+        $f3->error(404);
+    }
+});
+
 //Run fat-free
 $f3->run();
