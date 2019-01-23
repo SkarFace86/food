@@ -9,7 +9,23 @@
 </head>
 <body>
     <h1>Here is a h1 Header, {{ strtoupper(@username) }}<br>Password: {{ @password }}</h1>
+    <!-- Math -->
     <p>Fahrenheit: {{ @temp }} degrees</p>
-    <p>Celsius: {{ round((@temp-32) * (5.0/9.0), 2) }} degrees</p>
+    <p>Celsius: {{ round((@temp - 32) * (5.0/9.0), 2) }} degrees</p>
+    <p>C of circle: {{ @radius * 2 * 3.14159 }}</p>
+
+    <!-- Looping -->
+    <repeat group="{{ @fruits }}" value="{{ @fruit }}">
+        <ul>
+            <li>{{ trim(@fruit) }}</li>
+        </ul>
+        <!-- <p>{{ trim(@fruit) }}</p> -->
+    </repeat>
+
+    <repeat group="{{ @links }}" value="{{ @text=>@url }}">
+        <ul>
+            <li><a href="{{ @url }}">{{ @text }}</a></li>
+        </ul>
+    </repeat>
 </body>
 </html>

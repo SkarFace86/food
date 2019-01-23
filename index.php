@@ -25,6 +25,12 @@ $f3->route('GET /', function($f3) {
     $f3->set('password', sha1('Password01'));
     $f3->set('title', 'Working with Templates');
     $f3->set('temp', 69);
+    $f3->set('radius', 10);
+
+    //Set array
+    $f3->set('fruits', array('apple', 'orange ', ' banana'));
+    $f3->set('links', array('Google' => 'http://www.google.com',
+        'Green River' => 'http://www.greenriver.edu'));
 
     //load a template
     $template = new Template();
