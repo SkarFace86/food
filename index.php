@@ -18,6 +18,23 @@ $f3 = Base::instance();
 //Turn of fat free error reporting
 $f3->set('DEBUG', 3);
 
+
+$f3->route('GET /', function($f3) {
+    //save variables
+    $f3->set('username', 'jshmo');
+    $f3->set('password', sha1('Password01'));
+    $f3->set('title', 'Working with Templates');
+    $f3->set('temp', 69);
+
+    //load a template
+    $template = new Template();
+    echo $template->render('views/info.html');
+
+    //alternate syntax
+    //echo Template::instance()->render('views/info.html');
+});
+
+/*
 //Define a default route
 $f3->route('GET /', function() {
     //echo '<h1>My Fav Foods</h1>';
@@ -123,10 +140,11 @@ $f3->route('GET /dessert/@param', function($f3, $params) {
     $param = $params['param'];
     if($param == 'pie') {
         echo "<h3>I like 3.14159 for dessert</h3>";
+        echo "<img src='../images/pie.jpg' alt='Pie Image'>";
     } else {
         $f3->error(404);
     }
 });
-
+*/
 //Run fat-free
 $f3->run();
